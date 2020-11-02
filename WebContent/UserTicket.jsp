@@ -23,16 +23,26 @@ import="com.dao.*,java.sql.*,com.dbutil.*"
 			//获取数据库中所有票的信息
 			ResultSet rs = pstmt.executeQuery();
 			out.print("<tr>");
-			out.print("<td>Num</td>");
-			out.print("<td>User</td>");
-			out.print("<td>Ticket_id</td>");
+			out.print("<td>编号</td>");
+			out.print("<td>购买账号</td>");
+			//out.print("<td>真实姓名</td>");
+			out.print("<td>机票编号</td>");
+			out.print("<td>出发时间</td>");
+			out.print("<td>到达时间</td>");
+			out.print("<td>起点</td>");
+			out.print("<td>终点</td>");
+
 			out.print("</tr>");
+			int id = 1;
 			while(rs.next()){
 				out.print("<tr>");
-				out.print("<td>"+rs.getString("id")+"</td>");
+				out.print("<td>"+id+"</td>");
 				out.print("<td>"+rs.getString("user")+"</td>");
 				out.print("<td>"+rs.getString("ticket_id")+"</td>");
+				out.print("<td>"+rs.getString("departure_time")+"</td>");
+				out.print("<td>"+rs.getString("arrive_time")+"</td>");
 				out.print("</tr>");
+				id+=1;
 			}
 		}catch(Exception e){
 			out.print("error");
