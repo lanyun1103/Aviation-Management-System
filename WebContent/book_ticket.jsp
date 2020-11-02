@@ -6,16 +6,23 @@ import="java.sql.*,java.io.*,java.util.*,com.dbutil.DBUtil,com.dao.*"
 <html>
 <head>
 <meta charset="utf-8">
-<title>You can book ticket here</title>
+<title>购买机票界面</title>
  <script type="text/javascript">
  	function next(){
 		window.location = "UserTicket.jsp";
     }
  	function redirt(){
-		var p1 = document.getElementById("dep").text;
-		var p2 = document.getElementById("des").text;
+		alert("you click here");
+
+ 	    var dom1 = document.getElementById("depart");
+ 	    var p1 = dom1.options[dom1.selectedIndex].text;
+
+ 	    var dom2 = document.getElementById("destin");
+ 	    var p2 = dom2.options[dom2.selectedIndex].text;
+ 	    
+		//var p1 = document.getElementById("dep").text;
+		//var p2 = document.getElementById("des").text;
 		var username = document.getElementById("username").text;
-		alert(p1);
 		var URL = "check_ticker.jsp?Departure="+p1+"&Destination="+p2+"&username="+username ;
 		window.location.href=URL;
  	}
@@ -35,13 +42,13 @@ table{
 	<div>
 		<table border="1.5" align="center" >
 			<tr>
-				<td colspan="2">欢迎您：</td>
+				<td colspan="3">欢迎您：</td>
 				<%
 					request.setCharacterEncoding("UTF-8");
 					response.setCharacterEncoding("UTF-8"); 
 					response.setContentType("text/html; charset=utf-8");
 				%>
-				<td colspan="2">
+				<td colspan="3">
 				<%
 					String sc = "";
 					try{
@@ -55,7 +62,7 @@ table{
 				
 			</tr>
 			<tr>
-				<td colspan="4">票务信息</td>
+				<td colspan="6">票务信息</td>
 			</tr>
 			<%
 			try{
@@ -69,6 +76,9 @@ table{
 				out.print("<tr>");
 				out.print("<td>&nbsp&nbsp&nbsp起点&nbsp&nbsp&nbsp</td>");
 				out.print("<td>&nbsp&nbsp&nbsp终点&nbsp&nbsp&nbsp</td>");
+				out.print("<td>出发时间</td>");
+				out.print("<td>到达时间</td>");
+
 				out.print("<td>&nbsp&nbsp&nbsp价格&nbsp&nbsp&nbsp</td>");
 				out.print("<td>剩余票数</td>");
 				out.print("</tr>");
@@ -77,18 +87,21 @@ table{
 					String id = rs.getString("id");
 					out.print("<td>"+rs.getString("qidian")+"</td>");
 					out.print("<td>"+rs.getString("mudi")+"</td>");
+					out.print("<td>"+rs.getString("departure_time")+"</td>");
+					out.print("<td>"+rs.getString("arrive_time")+"</td>");
+
 					out.print("<td>"+rs.getString("price")+"</td>");
 					out.print("<td>"+rs.getString("remaining")+"</td>");
 					out.print("</tr>");
 				}
-				
+				new DBUtil().CloseDB(con);
 			}catch(Exception e){
 				out.print("error");
 			}
 			%>
 			<tr>
-				<td colspan="2">起点</td>
-				<td colspan="2">终点</td>
+				<td colspan="3">起点</td>
+				<td colspan="3">终点</td>
 			</tr>
 			
 			<%! PreparedStatement pstmt ;%>
@@ -102,29 +115,31 @@ table{
 				ResultSet rs = pstmt.executeQuery();
 			%>
 			<tr>
-				<td colspan="2">
-					<select>
+				<td colspan="3">
+					<select id="depart">
 						<%
 							while(rs.next()){
-								out.print("<option id=\"dep\" value =\"Departure\">"+rs.getString("qidian")+"</option>");
+								out.print("<option id=\"dep\" name=\"dep\" value =\"Departure\">"+rs.getString("qidian")+"</option>");
 							}
 						%>
 					</select>
 				</td>
 				
-				<td colspan="2">
-					<select>
+				<td colspan="3">
+					<select id="destin">
 					<%
 						rs = pstmt.executeQuery();
 						while(rs.next()){
-							out.print("<option id=\"des\" value =\"Destination\">"+rs.getString("mudi")+"</option>");
+							out.print("<option id=\"des\" name=\"des\" value =\"Destination\">"+rs.getString("mudi")+"</option>");
 						}
+						new DBUtil().CloseDB(con);
+
 					 %>
 					</select>
 				</td>
 			<tr>
 			<tr>
-				<td colspan="4"><input id="but" type="button" onclick="redirt()" value="跳转信息填写界面"/>
+				<td colspan="6"><input id="but" type="button" onclick="redirt()" value="跳转信息填写界面"/>
 				
 				</td>
 			</tr>

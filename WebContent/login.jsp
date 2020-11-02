@@ -34,7 +34,9 @@ contentType="text/html; charset=utf-8"
 			user_cur = userD.login(con, user);
 		}catch(Exception e){
 			e.printStackTrace();
-		}	
+		}
+		new DBUtil().CloseDB(con);
+
 	%>
 	Login successfully
 	<%	

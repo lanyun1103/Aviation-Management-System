@@ -5,29 +5,33 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+
 /**
- *	
+ * 
  * @author 14215
  *
  */
 public class DBUtil {
-	
+
 	private String dbURL = "jdbc:mysql://localhost:3306/db_ticket?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8";
 	private String dbUserName = "root";
-	private String dbPWD ="lollol1103";
+	private String dbPWD = "lollol1103";
 	private String jdbcName = "com.mysql.jdbc.Driver";
+
 	
-	public Connection getCon() throws Exception{
+	public Connection getCon() throws Exception {
 		Class.forName(jdbcName);
-		Connection con = DriverManager.getConnection(dbURL,dbUserName,dbPWD);
+		Connection con = DriverManager.getConnection(dbURL, dbUserName, dbPWD);
 		return con;
 	}
-	
+
 	public void CloseDB(Connection con) throws Exception {
-		if(con != null) {
+		if (con != null) {
+			System.out.println("链接关闭啦");
 			con.close();
 		}
 	}
+
 	/**
 	 * @param args
 	 */
@@ -43,7 +47,7 @@ public class DBUtil {
 			return null;
 		}
 	}
-		
+
 }
 
 //Statement stmt = con.createStatement();

@@ -5,7 +5,7 @@ import="java.sql.*,com.dbutil.*,com.dao.*"
 <html>
 <head>
 <meta charset="utf-8">
-<title>Insert title here</title>
+<title>注册界面</title>
 </head>
 <body background="timg.jpg" style="font-size: x-large">
 	<p align="center">天剑飞机用户注册</p>
@@ -34,6 +34,7 @@ import="java.sql.*,com.dbutil.*,com.dao.*"
 		}catch(Exception e){
 			e.printStackTrace();
 		}
+		new DBUtil().CloseDB(con);
 	%>
 	<div align="center">
 		<a href="login.jsp">返回登录页面</a>

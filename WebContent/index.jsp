@@ -7,7 +7,7 @@
 <title>飞机订票系统</title>
 </head>
 <body background="timg.jpg" style="font-size: x-large">
-	<p align="center">天剑飞机用户登陆过</p>
+	<p align="center">天剑飞机用户登陆界面</p>
 			
 	<form action="login.jsp" method="post">
 		<table align = "center">

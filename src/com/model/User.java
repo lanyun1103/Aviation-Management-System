@@ -1,6 +1,8 @@
 package com.model;
+
 /**
- * ´¢´æÓÃ»§ÐÅÏ¢£¬ºÍÓÃ»§µÄgetter/setter
+ * ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½getter/setter
+ * 
  * @author 14215
  *
  */
@@ -8,24 +10,29 @@ public class User {
 	int id;
 	public String username;
 	public String password;
-	
+
 	public int getId() {
 		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
+
 	public String getUsername() {
 		return username;
 	}
+
 	public void setUsername(String username) {
 		this.username = username;
 	}
+
 	public String getPassword() {
 		return password;
 	}
+
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
+
 }

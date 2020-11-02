@@ -5,15 +5,17 @@ import="com.dao.*,java.sql.*,com.dbutil.*"
 <html>
 <head>
 <meta charset="utf-8">
-<title>Insert title here</title>
+<title>用户票务信息</title>
 </head>
 <body style="font-size:x-large;">
 	<table align="center">
+	<%!String username; %>
 	<%
 	//建立连接，书写sql语句
 	//格式化输出结果
+	
 		try{
-			String username = request.getParameter("name");
+			username = request.getParameter("name");
 			System.out.println(username);
 			Connection con = new DBUtil().connect();
 			String sql = "select * from t_voyage_info where user = ?";
@@ -41,16 +43,20 @@ import="com.dao.*,java.sql.*,com.dbutil.*"
 				out.print("<td>"+rs.getString("ticket_id")+"</td>");
 				out.print("<td>"+rs.getString("departure_time")+"</td>");
 				out.print("<td>"+rs.getString("arrive_time")+"</td>");
+				out.print("<td>"+rs.getString("qidian")+"</td>");
+				out.print("<td>"+rs.getString("mudi")+"</td>");
 				out.print("</tr>");
 				id+=1;
 			}
+			new DBUtil().CloseDB(con);
+
 		}catch(Exception e){
 			out.print("error");
 		}
 	%>
 	<tr>
-		<td><a href="book_ticket.jsp">订票页面</a></td>
-		<td><a href="index.jsp">登录界面</a></td>
+		<td colspan="2"><a href="book_ticket.jsp?username=<%=username%>">订票页面</a></td>
+		<td colspan="2"><a href="index.jsp?username=<%=username%>">登录界面</a></td>
 	</tr>
 	</table>
 </body>
