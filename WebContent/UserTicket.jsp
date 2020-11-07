@@ -6,9 +6,16 @@ import="com.dao.*,java.sql.*,com.dbutil.*"
 <head>
 <meta charset="utf-8">
 <title>用户票务信息</title>
+<style>
+table{
+    border-collapse: collapse;
+    text-align: center
+}
+</style>
+
 </head>
-<body style="font-size:x-large;">
-	<table align="center">
+<body style="font-size:x-large;" background="timg.jpg">
+	<table align="center" border="1.5">
 	<%!String username; %>
 	<%
 	//建立连接，书写sql语句
@@ -55,8 +62,8 @@ import="com.dao.*,java.sql.*,com.dbutil.*"
 		}
 	%>
 	<tr>
-		<td colspan="2"><a href="book_ticket.jsp?username=<%=username%>">订票页面</a></td>
-		<td colspan="2"><a href="index.jsp?username=<%=username%>">登录界面</a></td>
+		<td colspan="4"><a href="book_ticket.jsp?username=<%=username%>">返回订票页面</a></td>
+		<td colspan="3"><a href="index.jsp?username=<%=username%>">返回登录界面</a></td>
 	</tr>
 	</table>
 </body>

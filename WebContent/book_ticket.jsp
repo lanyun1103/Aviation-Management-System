@@ -12,7 +12,6 @@ import="java.sql.*,java.io.*,java.util.*,com.dbutil.DBUtil,com.dao.*"
 		window.location = "UserTicket.jsp";
     }
  	function redirt(){
-		alert("you click here");
 
  	    var dom1 = document.getElementById("depart");
  	    var p1 = dom1.options[dom1.selectedIndex].text;
@@ -42,19 +41,20 @@ table{
 	<div>
 		<table border="1.5" align="center" >
 			<tr>
-				<td colspan="3">欢迎您：</td>
-				<%
+				<!-- <td colspan="3">欢迎您：</td>
+				 -->
+				 <%
 					request.setCharacterEncoding("UTF-8");
 					response.setCharacterEncoding("UTF-8"); 
 					response.setContentType("text/html; charset=utf-8");
 				%>
-				<td colspan="3">
+				<td colspan="7">
 				<%
 					String sc = "";
 					try{
 						sc = request.getParameter("username");
 						sc = new String(sc.getBytes("iso-8859-1"),"utf-8");
-						out.print("<a id=\"username\">"+sc+"</a>");
+						out.print("<a id=\"username\">欢迎您："+sc+"</a>");
 					}catch(Exception e){
 						e.printStackTrace();
 					}
@@ -99,11 +99,12 @@ table{
 				out.print("error");
 			}
 			%>
+			<!-- 
 			<tr>
 				<td colspan="3">起点</td>
 				<td colspan="3">终点</td>
 			</tr>
-			
+			 -->
 			<%! PreparedStatement pstmt ;%>
 			<%
 				TicketDao td = new TicketDao();
@@ -116,6 +117,7 @@ table{
 			%>
 			<tr>
 				<td colspan="3">
+				终点：
 					<select id="depart">
 						<%
 							while(rs.next()){
@@ -126,6 +128,7 @@ table{
 				</td>
 				
 				<td colspan="3">
+					终点：
 					<select id="destin">
 					<%
 						rs = pstmt.executeQuery();
@@ -160,9 +163,10 @@ table{
 		e.printStackTrace();
 	}
 	%>
-		<a href='UserTicket.jsp?name=<%=sc%>'>
-	查询当前行程
+	<div align="center" style="text-align: center;font-size: medium">
+	<a href='UserTicket.jsp?name=<%=sc%>'>
+		查询当前行程
 	</a>
-	
+	</div>
 	</body>
 </html>

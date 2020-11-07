@@ -9,8 +9,37 @@ package com.model;
 public class Ticket {
 	String qidian;
 	String mudi;
-	double price;
+	String t1;
+	String t2;
+	int remaining;
+	public Ticket(String qidian, String mudi, String t1, String t2,int remaining, double price) {
+		super();
+		this.qidian = qidian;
+		this.mudi = mudi;
+		this.t1 = t1;
+		this.t2 = t2;
+		this.price = price;
+		this.remaining = remaining;
+	}
 
+	public String getT1() {
+		return t1;
+	}
+
+	public void setT1(String t1) {
+		this.t1 = t1;
+	}
+
+	public String getT2() {
+		return t2;
+	}
+
+	public void setT2(String t2) {
+		this.t2 = t2;
+	}
+
+	double price;
+	
 	public String getQidian() {
 		return qidian;
 	}

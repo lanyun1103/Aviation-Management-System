@@ -92,7 +92,7 @@ import="com.dbutil.*,java.sql.*,com.dao.*"
 			<tr>
 			
 			<!-- 这里还需要传来一个username参数，不然返回购买界面会报错 -->
-				<td><a href="book_ticket.jsp?username=<%= username %>">返回购买界面</a></td>
+				<td colspan="4"><a href="book_ticket.jsp?username=<%= username %>">返回购买界面</a></td>
 			</tr>
 		</table>
 	</form>

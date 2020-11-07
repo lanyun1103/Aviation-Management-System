@@ -6,11 +6,16 @@ import="java.sql.*,com.dbutil.*,com.dao.*"
 <head>
 <meta charset="utf-8">
 <title>注册界面</title>
+<script>
+function redirect(){
+	window.location="index.jsp";
+}
+</script>
 </head>
 <body background="timg.jpg" style="font-size: x-large">
 	<p align="center">天剑飞机用户注册</p>
 	<form action="regist.jsp" method="post">
-		<table align = "center">
+		<table align = "center" style="text-align: center">
 			<tr>
 				<td>用户名信息</td>
 				<td><input type ="text" name = "username"></td>	
@@ -20,7 +25,7 @@ import="java.sql.*,com.dbutil.*,com.dao.*"
 				<td><input type = "password" name = "password"></td>
 			</tr>
 			<tr>
-				<td><input type ="submit" value="注册"></td>
+				<td colspan="2"><input type ="submit" value="注册"></td>
 			</tr>
 		</table>
 	</form>
@@ -36,8 +41,8 @@ import="java.sql.*,com.dbutil.*,com.dao.*"
 		}
 		new DBUtil().CloseDB(con);
 	%>
-	<div align="center">
-		<a href="login.jsp">返回登录页面</a>
+	<div align="center" style="text-align: center">
+		<button onclick="redirect()">返回登录页面</button>
 	</div>
 </body>
 </html>

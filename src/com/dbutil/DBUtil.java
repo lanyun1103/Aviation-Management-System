@@ -49,12 +49,3 @@ public class DBUtil {
 	}
 
 }
-
-//Statement stmt = con.createStatement();
-//ResultSet rs = stmt.executeQuery("select * from t_user_info");
-//while(rs.next()) {
-//	System.out.println(rs.getString("password"));
-//}
-//UserDao user = new UserDao();
-//user.regis(con, "sunyongda", "sun123456");
-//System.out.println("ע��ɹ�");

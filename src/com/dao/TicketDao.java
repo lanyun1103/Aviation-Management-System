@@ -1,5 +1,6 @@
 package com.dao;
 
+import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -95,5 +96,17 @@ public class TicketDao {
 		res[3] = mudi;
 		return res;
 
+	}
+	public boolean AddTicket(Connection con,String qidian,String mudi,String t1,String t2,int remaining,double price) throws Exception{
+		String sql = "insert into table_ticket_info (qidian,mudi,arrive_time,departure_time,remaining,price)"
+				+ "value (?,?,?,?,?,?)";
+		PreparedStatement pstmt = con.prepareStatement(sql);
+		pstmt.setString(1, qidian);
+		pstmt.setString(2, mudi);
+		pstmt.setString(3, t1);
+		pstmt.setString(4, t2);
+		pstmt.setInt(5, remaining);
+		pstmt.setDouble(6, price);
+		return pstmt.execute();
 	}
 }
