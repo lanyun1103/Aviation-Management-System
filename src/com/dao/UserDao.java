@@ -40,11 +40,13 @@ public class UserDao {
 		return res;
 	}
 
-	public void regis(Connection con, String username, String password) throws Exception {
-		String sql = "insert into t_user_info (username,password) VALUES (?,?)";
+	public void regis(Connection con, String username, String password, String idcard) throws Exception {
+		String sql = "insert into t_user_info (username,password,idcard) VALUES (?,?,?)";
 		PreparedStatement pstmt = con.prepareStatement(sql);
 		pstmt.setString(1, username);
 		pstmt.setString(2, password);
+		pstmt.setString(3, idcard);
+
 		pstmt.execute();
 	}
 }

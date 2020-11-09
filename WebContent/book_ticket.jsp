@@ -27,6 +27,17 @@ import="java.sql.*,java.io.*,java.util.*,dbutil.DBUtil,com.dao.*"
  	}
 </script>
 <style type="text/css">
+#searchbtn {
+  width: 100%;
+  height: 35px;
+  border: 0;
+  background: #5495E6;
+  font-size: 16px;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
 table{
     border-collapse: collapse;
     text-align: center
@@ -140,7 +151,7 @@ table{
 			</td>
 		<tr>
 		<tr>
-			<td colspan="6"><input id="but" type="button" onclick="redirt()" value="跳转信息填写界面"/>
+			<td colspan="6"><input id="searchbtn" type="button" onclick="redirt()" value="跳转信息填写界面"/>
 			
 			</td>
 		</tr>

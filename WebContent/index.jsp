@@ -20,7 +20,7 @@ function adminlogin(){
 </script>
 <style>
 	.main{
-		width: 300px;
+		width: 400px;
 		height: 150px;
 		position: fixed;
 		top: 20%;
@@ -28,22 +28,47 @@ function adminlogin(){
 		right: 0;
 		margin:0 auto;
 	}
+	table{
+		background:rgba(0,0,0,0.1)/*0.1~1为透明度bai*/;
+		border-collapse: collapse;
+    	text-align: center;	
+   	}
+   	#mod{
+   		position:absolute;
+   		left: 30px;
+  		top: 20px;
+   	}
+   	#container{
+   		position:absolute;
+   		left: 140px;
+  		top: 80px;
+   	}
+   	#scroler{
+   		position: absolute;
+   		top: 500px;
+   		left: 400px;
+   	}
+   	#header{
+   		font-size: xx-large;
+   	}
 </style>
 </head>
 <body background="timg.jpg" style="font-size: x-large">
-	
+    
+
+	<div id="container"><span><font style="font-family:思源黑体 Regular">天剑飞机订票系统</font></span></div>
 	<div class="main">
-	<p align="center">天剑飞机用户登陆界面</p>
+	<p align="center" id="header">天剑飞机用户登陆界面</p>
 	
 		<form action="" method="post" id="form1">
-			<table align = "center" style="text-align: center">
+			<table align = "center" style="text-align: center" border=1.5;>
 				<tr>
 					<td>用户名信息</td>
-					<td><input type ="text" name = "username"></td>	
+					<td><input type ="text" placeholder="用户名" name = "username"></td>	
 				</tr>
 				<tr>
 					<td>密码</td>
-					<td><input type = "password" name = "password"></td>
+					<td><input type = "password" placeholder="密码" name = "password"></td>
 				</tr>
 				<tr>
 					<td><button onclick="login()">登录</button></td>
@@ -54,6 +79,15 @@ function adminlogin(){
 				</tr>
 			</table>
 		</form>
-		
+	</div>
+	<div id="mod">
+		<img style="height: 100px;width: 100px;" src="head.jpg">
+	</div>
+	<div id="scroler">
+	<MARQUEE onmouseover=stop() onmouseout=start() scrollAmount=2 loop=infinite deplay="0">
+		<IMG src="imgs/stro1.jpg">
+		<IMG src="imgs/stro2.jpg">
+	</MARQUEE>
+	</div>
 </body>
 </html>

@@ -16,7 +16,7 @@
 8 }
 </style>
 </head>
-<body>
+<body background="timg.jpg">
 	<%
 		String username = request.getParameter("username");
 	%> 

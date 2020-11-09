@@ -32,6 +32,7 @@ table{
 			//获取数据库中所有票的信息
 			ResultSet rs = pstmt.executeQuery();
 			out.print("<tr>");
+			
 			out.print("<td>编号</td>");
 			out.print("<td>购买账号</td>");
 			//out.print("<td>真实姓名</td>");
