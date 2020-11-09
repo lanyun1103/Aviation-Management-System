@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
-import="java.sql.*,com.dbutil.*,com.dao.*"
+import="java.sql.*,dbutil.*,com.dao.*"
     pageEncoding="utf-8"%>
 <!DOCTYPE html>
 <html>
@@ -11,8 +11,20 @@ function redirect(){
 	window.location="index.jsp";
 }
 </script>
+<style>
+	.main{
+		width: 300px;
+		height: 150px;
+		position: fixed;
+		top: 20%;
+		left: 0;
+		right: 0;
+		margin:0 auto;
+	}
+</style>
 </head>
 <body background="timg.jpg" style="font-size: x-large">
+	<div class="main">
 	<p align="center">天剑飞机用户注册</p>
 	<form action="regist.jsp" method="post">
 		<table align = "center" style="text-align: center">
@@ -29,6 +41,7 @@ function redirect(){
 			</tr>
 		</table>
 	</form>
+	</div>
 	<%
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");

@@ -1,6 +1,6 @@
 <%@page import="java.math.BigDecimal"%>
 <%@page import="java.sql.Connection"%>
-<%@page import="com.dbutil.DBUtil"%>
+<%@page import="dbutil.DBUtil"%>
 <%@page import="com.dao.TicketDao"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>

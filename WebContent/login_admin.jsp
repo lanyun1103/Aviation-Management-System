@@ -3,7 +3,7 @@
 <%@page import="java.sql.Connection"%>
 <%@page import="com.model.User"%>
 <%@page import="com.dao.UserDao"%>
-<%@page import="com.dbutil.DBUtil"%>
+<%@page import="dbutil.DBUtil"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <!DOCTYPE html>

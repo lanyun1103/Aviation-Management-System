@@ -1,5 +1,5 @@
 <%@page import="java.io.Console"%>
-<%@ page import="com.dao.UserDao,java.sql.Connection,com.dbutil.DBUtil,
+<%@ page import="com.dao.UserDao,java.sql.Connection,dbutil.DBUtil,
 				com.model.User,com.dao.UserDao" 
 language="java" 
 contentType="text/html; charset=utf-8"

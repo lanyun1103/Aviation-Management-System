@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
-import="com.dao.*,java.sql.*,com.dbutil.*"
+import="com.dao.*,java.sql.*,dbutil.*"
     pageEncoding="utf-8"%>
 <!DOCTYPE html>
 <html>
