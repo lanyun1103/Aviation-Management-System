@@ -82,10 +82,25 @@ function redirect(){
 			document.getElementById("shower").innerHTML="注册成功，请返回登录界面。";
 
 		</script>
+		
 	<%
 					
 				}
+				else{
+	%>
+		<script type="text/javascript">
+			document.getElementById("shower").innerHTML="好好输密码啊喂";
+		</script>
+	<%
+				}
+			}else{
+	%>
+	<script type="text/javascript">
+		document.getElementById("shower").innerHTML="你为什么不输入值？嗯？";
+	</script>
+	<%			
 			}
+			
 		}catch(Exception e){
 			e.printStackTrace();
 		}
